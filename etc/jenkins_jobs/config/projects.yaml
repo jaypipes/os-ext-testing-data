@@ -1,0 +1,6 @@
+- project:
+    name: sandbox
+    github-org: openstack-dev
+
+    jobs:
+        - sandbox-dsvm-tempest-full
