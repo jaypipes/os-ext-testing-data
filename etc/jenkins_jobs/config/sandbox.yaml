@@ -6,9 +6,6 @@
           timeout: 185  # Timeout in *minutes*
           fail: true  # A job run that exceeds the timeout will cause a failure
       - timestamps
-    
-    triggers:
-      - zuul:
 
     builders:
       - devstack-checkout  # In macros.yaml from os-ext-testing

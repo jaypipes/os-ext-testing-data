@@ -30,8 +30,11 @@ Instructions for Use
    within the repository you created in step #1, you would set the `$UPSTREAM_GERRIT_SSH_KEY_PATH` value to
    `ssh/mygerritkey`
 
-6. Examine the files in `etc/jenkins_jobs/config` and modify as you need. Refer to this blog post
+6. Change the value of the `$PUBLISH_HOST` to the host (without https:// prefix) you will publish
+   job artifacts to.
+
+7. Examine the files in `etc/jenkins_jobs/config` and modify as you need. Refer to this blog post
    for more information.
 
-7. Example the `etc/zuul/layout.yaml` file and ensure you set up each upstream project that your
+8. Example the `etc/zuul/layout.yaml` file and ensure you set up each upstream project that your
    testing system intends to run Jenkins jobs for.
