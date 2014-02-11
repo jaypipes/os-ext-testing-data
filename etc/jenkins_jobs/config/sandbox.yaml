@@ -1,5 +1,5 @@
 - job-template:
-    name: sandbox-dsvm-tempest-full
+    name: 'sandbox-dsvm-tempest-full'
 
     wrappers:
       - timeout:
@@ -11,7 +11,7 @@
       - zuul:
 
     builders:
-        - devstack-checkout  # In macros.yaml from os-ext-testing
+      - devstack-checkout  # In macros.yaml from os-ext-testing
       - shell: |
           #!/bin/bash -xe
           export PYTHONUNBUFFERED=true
