@@ -50,7 +50,7 @@ pipelines:
 
 - projects:
     - name: openstack-dev/sandbox
-    check:
-      - sandbox-dsvm-tempest-full
-    gate:
-      - sandbox-dsvm-tempest-full
+      check:
+        - sandbox-dsvm-tempest-full
+      gate:
+        - sandbox-dsvm-tempest-full
