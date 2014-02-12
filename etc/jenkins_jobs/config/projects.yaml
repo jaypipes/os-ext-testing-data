@@ -1,6 +1,9 @@
 - project:
     name: sandbox
     github-org: openstack-dev
+    node: master
 
     jobs:
+        - sandbox-noop-check-communication
         - sandbox-dsvm-tempest-full
+            node: devstack_slave

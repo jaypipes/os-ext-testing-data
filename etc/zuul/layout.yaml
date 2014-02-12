@@ -13,6 +13,11 @@ pipelines:
         - event: change-restored
         - event: comment-added
           comment_filter: (?i)^\s*recheck(( (?:bug|lp)[\s#:]*(\d+))|( no bug))\s*$
+        # Change "myvendor" below to your vendor's name to add a custom
+        # recheck trigger that runs the check pipeline jobs when someone
+        # adds a comment to a review that says "recheck $VENDOR".
+        - event: comment-added
+          comment_filter: (?i)^\s*recheck myvendor\s*$
     start:
       gerrit:
         verified: 0
@@ -51,6 +56,16 @@ pipelines:
 - projects:
     - name: openstack-dev/sandbox
       check:
-        - sandbox-dsvm-tempest-full
+        # Remove this after successfully verifying communication with upstream
+        # and seeing a posted successful review.
+        - sandbox-noop-check-communication
+        # Uncomment this job when you have a jenkins slave running and want to
+        # test a full Tempest run within devstack.
+        #- sandbox-dsvm-tempest-full
       gate:
-        - sandbox-dsvm-tempest-full
+        # Remove this after successfully verifying communication with upstream
+        # and seeing a posted successful review.
+        - sandbox-noop-check-communication
+        # Uncomment this job when you have a jenkins slave running and want to
+        # test a full Tempest run within devstack.
+        #- sandbox-dsvm-tempest-full

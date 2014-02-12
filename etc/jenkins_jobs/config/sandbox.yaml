@@ -1,5 +1,19 @@
-- job:
+- job-template:
+    name: 'sandbox-noop-check-communication'
+    node: '{node}'
+
+    builders:
+      - shell: |
+          #!/bin/bash -xe
+          echo "Hello world, this is MyVendor's Testing System"
+
+    publishers:
+      - console-log  # In macros.yaml from os-ext-testing
+
+
+- job-template:
     name: 'sandbox-dsvm-tempest-full'
+    node: '{node}'
 
     wrappers:
       - timeout:
