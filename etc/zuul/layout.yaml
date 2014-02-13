@@ -53,7 +53,7 @@ pipelines:
     window-floor: 20
     window-increase-factor: 2
 
-- projects:
+projects:
     - name: openstack-dev/sandbox
       check:
         # Remove this after successfully verifying communication with upstream
