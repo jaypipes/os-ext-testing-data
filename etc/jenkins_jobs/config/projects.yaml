@@ -5,5 +5,5 @@
 
     jobs:
         - sandbox-noop-check-communication
-        - sandbox-dsvm-tempest-full
+        - sandbox-dsvm-tempest-full:
             node: devstack_slave
