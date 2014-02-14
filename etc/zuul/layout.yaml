@@ -54,18 +54,18 @@ pipelines:
     window-increase-factor: 2
 
 projects:
-    - name: openstack-dev/sandbox
-      check:
-        # Remove this after successfully verifying communication with upstream
-        # and seeing a posted successful review.
-        - sandbox-noop-check-communication
-        # Uncomment this job when you have a jenkins slave running and want to
-        # test a full Tempest run within devstack.
-        #- sandbox-dsvm-tempest-full
-      gate:
-        # Remove this after successfully verifying communication with upstream
-        # and seeing a posted successful review.
-        - sandbox-noop-check-communication
-        # Uncomment this job when you have a jenkins slave running and want to
-        # test a full Tempest run within devstack.
-        #- sandbox-dsvm-tempest-full
+  - name: openstack-dev/sandbox
+    check:
+      # Remove this after successfully verifying communication with upstream
+      # and seeing a posted successful review.
+      - sandbox-noop-check-communication
+      # Uncomment this job when you have a jenkins slave running and want to
+      # test a full Tempest run within devstack.
+      #- sandbox-dsvm-tempest-full
+    gate:
+      # Remove this after successfully verifying communication with upstream
+      # and seeing a posted successful review.
+      - sandbox-noop-check-communication
+      # Uncomment this job when you have a jenkins slave running and want to
+      # test a full Tempest run within devstack.
+      #- sandbox-dsvm-tempest-full
