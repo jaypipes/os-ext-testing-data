@@ -25,7 +25,6 @@
           export PYTHONUNBUFFERED=true
           export DEVSTACK_GATE_TIMEOUT=180
           export DEVSTACK_GATE_TEMPEST=1
-          export DEVSTACK_GATE_TEMPEST_VOLUME_API=1
           export RE_EXEC=true
           cp devstack-gate/devstack-vm-gate-wrap.sh ./safe-devstack-vm-gate-wrap.sh
           ./safe-devstack-vm-gate-wrap.sh
