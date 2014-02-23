@@ -22,6 +22,12 @@
       - devstack-checkout  # In macros.yaml from os-ext-testing
       - shell: |
           #!/bin/bash -xe
+          if [ -z $ZUUL_PROJECT ]; then
+              export ZUUL_PROJECT=openstack-dev/sandbox
+          fi
+          if [ -z $ZUUL_BRANCH ]; then
+              export ZUUL_BRANCH=master
+          fi
           export PYTHONUNBUFFERED=true
           export DEVSTACK_GATE_TIMEOUT=180
           export DEVSTACK_GATE_TEMPEST=1
