@@ -5,3 +5,24 @@ export UPSTREAM_GERRIT_USER=jaypipes-testing
 export UPSTREAM_GERRIT_SSH_KEY_PATH=gerrit_key
 export JENKINS_SSH_KEY_PATH=jenkins_key
 export PUBLISH_HOST=127.0.0.1
+export MYSQL_ROOT_PASSWORD=<mysql_root_pw>
+export MYSQL_PASSWORD=<mysqlpw>
+export LOCAL_USERNAME=<openstack_username>
+export LOCAL_PASSWORD=<openstack_password>
+export LOCAL_01_IP=<openstack_ip>
+export JENKINS_API_USER=jenkins
+export JENKINS_API_KEY=<hex_id>
+export JENKINS_CREDENTIALS_ID=<hex_id>
+export JENKINS_SSH_PUBLIC_KEY_NO_WHITESPACE=
+export HTTP_PROXY=http://myproxy.com:8080/
+export HTTPS_PROXY=http://myproxy.com:8080/
+no_proxy=localhost,127.0.0.1,localaddress,.localdomain.com,<my_ip>
+#My Storage Backend
+export no_proxy=$no_proxy,10.10.20.244
+export no_proxy=$no_proxy,10.10.120.244
+export no_proxy=$no_proxy,10.10.220.244
+#Floating ips
+printf -v floating_no_proxy '%s,' 10.50.132.{17..30};
+export no_proxy=$no_proxy,${floating_no_proxy%,}
+export NO_PROXY=$no_proxy
+
