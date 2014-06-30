@@ -48,8 +48,12 @@ Follow these manual instructions to get your data repository set up:
 8. Change the value of the `$PUBLISH_HOST` to the host (without https:// prefix) you will publish
    job artifacts to.
 
-9. Examine the files in `etc/jenkins_jobs/config` and modify as you need. Refer to this blog post
+9. Add a credentials ID for `JENKINS_CREDENTIALS_ID`.  The following is an example:
+   
+   JENKINS_CREDENTIALS_ID=12345678-90ab-cdef-ghij-klmnopqrstuv
+
+10. Examine the files in `etc/jenkins_jobs/config` and modify as you need. Refer to this blog post
    for more information.
 
-10. Example the `etc/zuul/layout.yaml` file and ensure you set up each upstream project that your
+11. Example the `etc/zuul/layout.yaml` file and ensure you set up each upstream project that your
    testing system intends to run Jenkins jobs for.
