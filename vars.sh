@@ -12,7 +12,8 @@ export LOCAL_PASSWORD=<openstack_password>
 export LOCAL_01_IP=<openstack_ip>
 export JENKINS_API_USER=jenkins
 export JENKINS_API_KEY=<hex_id>
-export JENKINS_CREDENTIALS_ID=<hex_id>
+#This credentials id is the default.  Change if needed.
+export JENKINS_CREDENTIALS_ID=f4f07d8e-2634-4d01-bcf6-7b8be996e062
 export JENKINS_SSH_PUBLIC_KEY_NO_WHITESPACE=
 export HTTP_PROXY=http://myproxy.com:8080/
 export HTTPS_PROXY=http://myproxy.com:8080/
