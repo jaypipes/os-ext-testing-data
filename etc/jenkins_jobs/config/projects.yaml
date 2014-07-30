@@ -8,19 +8,3 @@
         - noop-check-communication
         - dsvm-tempest-full:
             node: 'devstack-precise || devstack-precise-check || d-p-c'
-
-- project:
-    name: devstack-jobs
-
-    jobs:
-      # Normal gate and check jobs
-      - devstack-jobs:
-          pipeline: gate
-          node: devstack-precise
-          branch-designator: ''
-          branch-override: default
-      - devstack-jobs:
-          pipeline: check
-          node: 'devstack-precise || devstack-precise-check || d-p-c'
-          branch-designator: ''
-          branch-override: default

@@ -3,6 +3,10 @@ export GIT_EMAIL='testing@myvendor.com'
 export GIT_NAME='MyVendor Jenkins'
 export UPSTREAM_GERRIT_USER=jaypipes-testing
 export UPSTREAM_GERRIT_SSH_KEY_PATH=gerrit_key
+
+#Openstack
+export UPSTREAM_GERRIT_SSH_HOST_KEY="review.openstack.org,23.253.232.87,2001:4800:7815:104:3bc3:d7f6:ff03:bf5d b8:3c:72:82:d5:9e:59:43:54:11:ef:93:40:1f:6d:a5"
+
 export JENKINS_SSH_KEY_PATH=jenkins_key
 export PUBLISH_HOST=127.0.0.1
 export MYSQL_ROOT_PASSWORD=<mysql_root_pw>
@@ -18,12 +22,5 @@ export JENKINS_SSH_PUBLIC_KEY_NO_WHITESPACE=
 export HTTP_PROXY=http://myproxy.com:8080/
 export HTTPS_PROXY=http://myproxy.com:8080/
 no_proxy=localhost,127.0.0.1,localaddress,.localdomain.com,<my_ip>
-#My Storage Backend
-export no_proxy=$no_proxy,10.10.20.244
-export no_proxy=$no_proxy,10.10.120.244
-export no_proxy=$no_proxy,10.10.220.244
-#Floating ips
-printf -v floating_no_proxy '%s,' 10.50.132.{17..30};
-export no_proxy=$no_proxy,${floating_no_proxy%,}
 export NO_PROXY=$no_proxy
 
