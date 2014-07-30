@@ -9,12 +9,16 @@ export UPSTREAM_GERRIT_SSH_HOST_KEY="review.openstack.org,23.253.232.87,2001:480
 
 export JENKINS_SSH_KEY_PATH=jenkins_key
 export PUBLISH_HOST=127.0.0.1
+
+#Used by Nodepool
 export MYSQL_ROOT_PASSWORD=<mysql_root_pw>
 export MYSQL_PASSWORD=<mysqlpw>
 export LOCAL_USERNAME=<openstack_username>
 export LOCAL_PASSWORD=<openstack_password>
 export LOCAL_01_IP=<openstack_ip>
+
 export JENKINS_API_USER=jenkins
+#API Key is used if you secure your jenkins with a password
 export JENKINS_API_KEY=<hex_id>
 #This credentials id is the default.  Change if needed.
 export JENKINS_CREDENTIALS_ID=f4f07d8e-2634-4d01-bcf6-7b8be996e062
