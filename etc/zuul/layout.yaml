@@ -49,6 +49,10 @@ pipelines:
     window-floor: 20
     window-increase-factor: 2
 
+jobs:
+  - name: ^dsvm-tempest.*$
+    parameter-function: single_use_node
+
 projects:
   - name: openstack-dev/sandbox
     check:
