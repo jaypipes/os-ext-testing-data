@@ -12,15 +12,13 @@ pipelines:
         - event: patchset-created
         - event: change-restored
         - event: comment-added
-          comment_filter: (?i)^\s*recheck(( (?:bug|lp)[\s#:]*(\d+))|( no bug))\s*$
+
+          comment: (?i)^(Patch Set [0-9]+:)?( [\w\\+-]*)*(\n\n)?\s*recheck(( (?:bug|lp)[\s#:]*(\d+))|( no bug))\s*$
         # Change "myvendor" below to your vendor's name to add a custom
         # recheck trigger that runs the check pipeline jobs when someone
         # adds a comment to a review that says "recheck $VENDOR".
         - event: comment-added
-          comment_filter: (?i)^\s*recheck myvendor\s*$
-    start:
-      gerrit:
-        verified: 0
+          comment: (?i)^(Patch Set [0-9]+:)?( [\w\\+-]*)*(\n\n)?\s*recheck(( (?:bug|lp)[\s#:]*(\d+))|( myvendor))\s*$
     success:
       gerrit:
         verified: 1
@@ -39,10 +37,8 @@ pipelines:
           approval:
             - approved: 1
         - event: comment-added
+          #TODO: This coment regex is likely out-of-date
           comment_filter: (?i)^\s*reverify( (?:bug|lp)[\s#:]*(\d+))\s*$
-    start:
-      gerrit:
-        verified: 0
     success:
       gerrit:
         verified: 2
