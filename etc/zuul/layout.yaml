@@ -1,12 +1,8 @@
-includes:
-  - python-file: openstack_functions.py
-
 pipelines:
   - name: check
     description: Newly uploaded patchsets enter this pipeline to receive an initial +/-1 Verified vote from Jenkins.
     failure-message: Build failed.  For information on how to proceed, see https://wiki.openstack.org/wiki/GerritJenkinsGit#Test_Failures
     manager: IndependentPipelineManager
-    precedence: low
     trigger:
       gerrit:
         - event: patchset-created
@@ -26,39 +22,9 @@ pipelines:
       gerrit:
         verified: -1
 
-  - name: gate
-    description: Changes that have been approved by core developers are enqueued in order in this pipeline, and if they pass tests in Jenkins, will be merged.
-    failure-message: Build failed.  For information on how to proceed, see https://wiki.openstack.org/wiki/GerritJenkinsGit#Test_Failures
-    manager: DependentPipelineManager
-    precedence: low
-    trigger:
-      gerrit:
-        - event: comment-added
-          approval:
-            - approved: 1
-        - event: comment-added
-          #TODO: This coment regex is likely out-of-date
-          comment_filter: (?i)^\s*reverify( (?:bug|lp)[\s#:]*(\d+))\s*$
-    success:
-      gerrit:
-        verified: 2
-        submit: true
-    failure:
-      gerrit:
-        verified: -2
-    window-floor: 20
-    window-increase-factor: 2
-
 projects:
   - name: openstack-dev/sandbox
     check:
-      # Remove this after successfully verifying communication with upstream
-      # and seeing a posted successful review.
-      - noop-check-communication
-      # Uncomment this job when you have a jenkins slave running and want to
-      # test a full Tempest run within devstack.
-      #- dsvm-tempest-full
-    gate:
       # Remove this after successfully verifying communication with upstream
       # and seeing a posted successful review.
       - noop-check-communication
